@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Releases</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+/* Releases Container */
+.releases-container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Product Grid */
+#releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Product Card */
+.release-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.release-card:hover {
+    transform: scale(1.05);
+}
+
+.release-card img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.release-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.release-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.release-card .release-date {
+    font-size: 14px;
+    color: #4caf50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #releases-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+            </div>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="allproducts.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search electronics..." />
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <div class="user-section">
+                    <button class="signin-btn"><a href="login.html">Log Out </a></button>
+                    <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Sub Category Bar -->
+    <div class="sub-category-bar">
+        <ul class="category-list">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mobiles.html">Mobiles</a></li>
+                    <li><a href="laptop.html">Laptops</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="home-appliances.html">Home Appliances</a></li>
+                </ul>
+            </li>
+            <li><a href="fresh.html">Fresh</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="best-seller.html">Best Seller</a></li>
+            <li><a href="deals.html">Today's Deals</a></li>
+            <li><a href="new-release.html">New Release</a></li>
+        </ul>
+    </div>
+    <header>
+        <h1>🚀 New Releases</h1>
+    </header>
+
+    <div class="releases-container">
+        <div id="releases-grid">
+            <!-- Products will be added dynamically using JS -->
+        </div>
+    </div>
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best
+                    prices.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="allproducts.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login/Register</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> support@shopstore.com</p>
+                <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#">🔵 Facebook</a><br>
+                <a href="#">🟣 Instagram</a><br>
+                <a href="#">🔷 Twitter</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let dropdownToggle = document.querySelector(".dropdown-toggle");
+            let dropdownMenu = document.querySelector(".dropdown-menu");
+
+            dropdownToggle.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevents the default anchor behavior
+                dropdownMenu.classList.toggle("show");
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove("show");
+                }
+            });
+
+            // Ensure clicking on dropdown items doesn't close the menu
+            dropdownMenu.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        });
+        // New Releases Data
+const newReleases = [
+    {
+        name: "Realme GT 3 Pro",
+        price: 5499,
+        releaseDate: "2024-10-10",
+        image: "images/newrelease/release1.webp",
+    },
+    {
+        name: "Samsung Galaxy S24 Ultra",
+        price: 45999,
+        releaseDate: "2024-12-25",
+        image: "images/newrelease/release2.webp",
+    },
+    {
+        name: "Apple iPhone 16 Pro",
+        price: 125999,
+        releaseDate: "2024-10-15",
+        image: "images/newrelease/release3.webp",
+    },
+    {
+        name: "Apple iPhone 16 Pro Max",
+        price: 139999,
+        price: 1599,
+        releaseDate: "2024-09-20",
+        image: "images/newrelease/release4.webp",
+    },
+    {
+        name: "Vivo X100 Pro",
+        price: 37799,
+        releaseDate: "2024-09-05",
+        image: "images/newrelease/release5.webp",
+    },
+    {
+        name: "Motorola Edge 40 Pro",
+        price: 49999,
+        releaseDate: "2024-07-05",
+        image: "images/newrelease/release6.webp",
+    },
+    {
+        name: "Boat Airdopes 200 Noise Cancelling",
+        price: 12799,
+        releaseDate: "2024-10-10",
+        image: "images/newrelease/release7.webp",
+    },
+    {
+        name: "OnePlus Airbuds Pro 3",
+        price: 11999,
+        releaseDate: "2024-09-11",
+        image: "images/newrelease/release8.webp",
+    },
+    {
+        name: "DJI Mini 4 Drone",
+        price: 12799,
+        releaseDate: "2024-11-28",
+        image: "images/newrelease/release9.webp",
+    },
+    {
+        name: "Google Pixel 8 Pro",
+        price: 34799,
+        releaseDate: "2024-10-16",
+        image: "images/newrelease/release10.webp",
+    },
+    {
+        name: "Sony PlayStation 5 Pro",
+        price: 12799,
+        releaseDate: "2024-08-23",
+        image: "images/newrelease/release11.webp",
+    },
+    {
+        name: "Galaxy Tab S9 FE",
+        price: 55799,
+        releaseDate: "2024-11-20",
+        image: "images/newrelease/release12.webp",
+    },
+    {
+        name: "Apple Smart Watch Series 10",
+        price: 39999,
+        releaseDate: "2024-09-18",
+        image: "images/newrelease/release13.webp",
+    },
+    {
+        name: "Galaxy Tab S9 Ultra",
+        price: 79999,
+        releaseDate: "2024-08-15",
+        image: "images/newrelease/release14.webp",
+    },
+    {
+        name: "Air Fryer Pro 5L",
+        price: 23999,
+        releaseDate: "2024-09-25",
+        image: "images/newrelease/release15.webp",
+    },
+    {
+        name: "Vivo V30 Pro",
+        price: 29999,
+        releaseDate: "2024-10-05",
+        image: "images/newrelease/release5.webp",
+    }
+];
+
+// Load New Releases into Grid
+function loadNewReleases() {
+    const grid = document.getElementById("releases-grid");
+
+    newReleases.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("release-card");
+
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="price">$${product.price}</p>
+            <p class="release-date">Release Date: ${product.releaseDate}</p>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+// Load releases when page loads
+document.addEventListener("DOMContentLoaded", loadNewReleases);
+
+    </script>
+
+</body>
+</html>
