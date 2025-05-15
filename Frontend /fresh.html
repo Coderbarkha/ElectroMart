@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Electronics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="script.js" defer></script>
+    <style>
+        /* Subcategory Bar */
+.subcategory-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subcategory-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.subcategory-btn:hover {
+  background-color: #0056b3;
+}
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding: 15px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+/* Product Image */
+.product-card img {
+  width: 200px;
+  height: 200px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Product Name */
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Price */
+.price {
+  font-size: 16px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Add to Cart Button */
+button.add-to-cart {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button.add-to-cart:hover {
+  background: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subcategory-bar {
+    flex-wrap: wrap;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+          <div class="logo">
+            <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+          </div>
+    
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="allproducts.jsp">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+    
+           
+    
+            <div class="user-section">
+              <button class="signin-btn"><a href="login.html">Log Out </a></button>
+              <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i></a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <!-- Sub Category Bar -->
+    <div class="sub-category-bar">
+    <ul class="category-list">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+              <li><a href="mobiles.html">Mobiles</a></li>
+              <li><a href="laptop.html">Laptops</a></li>
+              <li><a href="accessories.html">Accessories</a></li>
+              <li><a href="home-appliances.html">Home Appliances</a></li>
+          </ul>
+      </li>
+      <li><a href="fresh.html">Fresh</a></li>
+      
+      <li><a href="bestseller.jsp">Best Seller</a></li>
+      <li><a href="deals.html">Today's Deals</a></li>
+      <li><a href="new-release.html">New Release</a></li>
+    </ul>
+    </div>
+
+    <!-- Subcategory Navigation -->
+    <nav class="subcategory-bar">
+        <button class="subcategory-btn" onclick="filterCategory('all')">All</button>
+        <button class="subcategory-btn" onclick="filterCategory('laptops')">Laptops</button>
+        <button class="subcategory-btn" onclick="filterCategory('smartphones')">Smartphones</button>
+        <button class="subcategory-btn" onclick="filterCategory('smartwatches')">Smartwatches</button>
+        <button class="subcategory-btn" onclick="filterCategory('earphones')">Earphones</button>
+    </nav>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <div class="product-card smartphones">
+            <img src="fresh1.webp" alt="smartphones">
+            <h2 class="product-name">Samsung Galaxy S25 Ultra 5G</h2>
+            <p class="price">₹86393.22</p>
+            <a href="allproducts.html">View Details</a>
+        </div>
+
+        <div class="product-card smartphones">
+            <img src="fresh2.webp" alt="Smartphone">
+            <h2 class="product-name">Xiaomi Redmi Note 13 Pro Plus 5G</h2>
+            <p class="price">₹74,499</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card smartphones">
+            <img src="fresh3.webp" alt="Smartphone">
+            <h2 class="product-name">Realme P3 Pro</h2>
+            <p class="price">₹79,999</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card earphones">
+            <img src="fresh4.webp" alt="Wireless Earphones">
+            <h2 class="product-name">boAt Airdopes Alpha True Wireless Earbuds</h2>
+            <p class="price">₹799</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card earphones">
+            <img src="fresh5.webp" alt="Wireless Earphones">
+            <h2 class="product-name">Noise Air 
+            Clips OWS Earbuds</h2>
+            <p class="price">₹2,799</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card earphones">
+            <img src="fresh6.webp" alt="Wireless Earphones">
+            <h2 class="product-name">Bose Ultra Open Earbuds</h2>
+            <p class="price">₹25,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card laptops">
+            <img src="fresh7.webp" alt="laptop">
+            <h2 class="product-name">Lenovo IdeaPad 1 Intel Celeron N4020 14" Laptop</h2>
+            <p class="price">₹20,391</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card smarttv">
+            <img src="fresh8.webp" alt="smarttv">
+            <h2 class="product-name">Croma 109 Cm (43 Inch) Full Hd Led Smart Tv With Bezel Less Display</h2>
+            <p class="price">₹14,499</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card washing-machine">
+            <img src="fresh9.webp" alt="washing-machine">
+            <h2 class="product-name">Samsung 8 KG 5 Star Fully-Automatic Top Load Washing Machine</h2>
+            <p class="price">₹19,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card smartwatches">
+            <img src="fresh10.webp" alt="smartwatches">
+            <h2 class="product-name">Noise Colorfit Icon 2 Smart Watch</h2>
+            <p class="price">₹1,099</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card laptops">
+            <img src="fresh11.webp" alt="laptop">
+            <h2 class="product-name">Samsung Galaxy Book4 13th Gen 1315u Laptop</h2>
+            <p class="price">₹41,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card earphones">
+            <img src="fresh12.webp" alt="Wireless Earphones">
+            <h2 class="product-name">boAt Immortal 121 Ear TWS Gaming Earbuds with Beast Mode</h2>
+            <p class="price">₹1,299</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card smarttv">
+            <img src="fresh13.webp" alt="smarttv">
+            <h2 class="product-name">Croma 109 Cm (43 Inch) Full Hd Led Smart Tv</h2>
+            <p class="price">₹18,999</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card tablets">
+            <img src="fresh14.webp" alt="tablets">
+            <h2 class="product-name">Tablets</h2>
+            <p class="price">₹19,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card laptops">
+            <img src="fresh15.webp" alt="laptop">
+            <h2 class="product-name">Dell 15 G15-5530 Gaming Laptop</h2>
+            <p class="price">₹69,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card earphones">
+            <img src="fresh16.webp" alt="Wireless Earphones">
+            <h2 class="product-name">Wireless Earphones</h2>
+            <p class="price">₹13,550</p>
+            <a href="allproducts.html">View Details</a>
+        </div>
+
+        <div class="product-card tvstick">
+            <img src="fresh17.webp" alt="tvstick">
+            <h2 class="product-name">Amazon Fire TV Stick</h2>
+            <p class="price">₹34,500</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card washing-machine">
+            <img src="fresh18.webp" alt="washing-machine">
+            <h2 class="product-name">Automatic Washing Machine</h2>
+            <p class="price">₹15,550</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card Projector">
+            <img src="fresh19.webp" alt="Projector">
+            <h2 class="product-name">Smart Projector</h2>
+            <p class="price">₹33,999</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card refrigerator">
+            <img src="fresh20.webp" alt="refrigerator">
+            <h2 class="product-name">Whirlpool Single door Refrigerator</h2>
+            <p class="price">₹18,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+          </div>
+      
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="allproducts.jsp">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Login/Register</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Phone:</strong> +91-9876543210</p>
+            <p><strong>Email:</strong> support@shopstore.com</p>
+            <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+          </div>
+      
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#">🔵 Facebook</a><br>
+            <a href="#">🟣 Instagram</a><br>
+            <a href="#">🔷 Twitter</a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let dropdownToggle = document.querySelector(".dropdown-toggle");
+    let dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents the default anchor behavior
+        dropdownMenu.classList.toggle("show");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
+
+    // Ensure clicking on dropdown items doesn't close the menu
+    dropdownMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+});
+
+
+
+// Function to filter categories
+function filterCategory(category) {
+    let products = document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+        if (category === "all") {
+            product.style.display = "block";
+        } else {
+            product.style.display = product.classList.contains(category) ? "block" : "none";
+        }
+    });
+}
+
+
+</script>
+</body>
+</html>
