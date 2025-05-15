@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .product-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-img {
+            flex: 1;
+            max-width: 50%;
+        }
+        .product-img img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .product-info {
+            flex: 1;
+            max-width: 45%;
+        }
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #28a745;
+            margin: 10px 0;
+        }
+        .product-description {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .product-specs {
+            font-size: 14px;
+            color: #555;
+        }
+        .product-specs p {
+            margin: 5px 0;
+        }
+        .rating {
+            color: #f4c150;
+            font-size: 18px;
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .product-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .product-img, .product-info {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+  <header class="header">
+    <div class="top-bar">
+      <div class="logo">
+        <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+      </div>
+
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="allproducts.jsp">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search electronics..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="user-section">
+          <button class="signin-btn"><a href="login.html">Log Out </a></button>
+          <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i>
+            <span id="cart-count" aria-live="polite">0</span>
+
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+    <div class="container">
+        <div class="product-card">
+            <div class="product-img">
+                <img src="product-image.jpg" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Product Name</h2>
+                <p class="product-price">rs.199.99</p>
+                <div class="rating">
+                    ★★★★☆ (4.5/5 based on 120 reviews)
+                </div>
+                <p class="product-description">
+                    This is a high-quality product designed to enhance your experience. It is durable, reliable, and built with premium materials.
+                </p>
+                <div class="product-specs">
+                    <p><strong>Brand:</strong> XYZ Brand</p>
+                    <p><strong>Category:</strong> Electronics</p>
+                    <p><strong>Availability:</strong> In Stock</p>
+                    <p><strong>SKU:</strong> #12345XYZ</p>
+                </div>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Us</h3>
+          <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+        </div>
+    
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login/Register</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><strong>Phone:</strong> +91-9876543210</p>
+          <p><strong>Email:</strong> support@shopstore.com</p>
+          <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+        </div>
+    
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="#">🔵 Facebook</a><br>
+          <a href="#">🟣 Instagram</a><br>
+          <a href="#">🔷 Twitter</a>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      // Initialize cart from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const cartCount = document.getElementById("cart-count");
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  cartCount.textContent = cartItems.length;
+
+  // Listen for all Add to Cart buttons
+  document.querySelectorAll(".add-to-cart, .add-to-cart-btn").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default link behavior
+
+      const product = {
+        name: this.getAttribute("data-name"),
+        price: this.getAttribute("data-price"),
+        image: this.getAttribute("data-image")
+      };
+
+      // Add product to localStorage cart
+      cartItems.push(product);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+
+      // Update cart count
+      cartCount.textContent = cartItems.length;
+    });
+  });
+});
+    </script>
+</body>
+</html>
