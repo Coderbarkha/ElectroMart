@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Deals</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+
+/* Header */
+header {
+    background-color: #ff5722;
+    color: white;
+    padding: 4px;
+    font-size: 24px;
+}
+
+/* Deals Container */
+.deals-container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Product Grid */
+#deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Deal Card */
+.deal-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.deal-card:hover {
+    transform: scale(1.05);
+}
+
+.deal-card img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.deal-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.deal-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.deal-card .discount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.deal-card .original-price {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #757575;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #deals-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+            </div>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="allproducts.jsp">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+               
+
+                <div class="user-section">
+                    <button class="signin-btn"><a href="login.html">Log Out </a></button>
+                    <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Sub Category Bar -->
+    <div class="sub-category-bar">
+        <ul class="category-list">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mobiles.html">Mobiles</a></li>
+                    <li><a href="laptop.html">Laptops</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="home-appliances.html">Home Appliances</a></li>
+                </ul>
+            </li>
+            <li><a href="fresh.html">Fresh</a></li>
+            
+            <li><a href="bestseller.jsp">Best Seller</a></li>
+            <li><a href="deals.html">Today's Deals</a></li>
+            <li><a href="new-release.html">New Release</a></li>
+        </ul>
+    </div>
+    <header>
+        <h1>⚡ Today's Deals</h1>
+    </header>
+
+    <div class="deals-container">
+        <div id="deals-grid">
+            <!-- Deals will be added dynamically using JS -->
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best
+                    prices.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="allproducts.jsp">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login/Register</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> support@shopstore.com</p>
+                <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#">🔵 Facebook</a><br>
+                <a href="#">🟣 Instagram</a><br>
+                <a href="#">🔷 Twitter</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let dropdownToggle = document.querySelector(".dropdown-toggle");
+            let dropdownMenu = document.querySelector(".dropdown-menu");
+
+            dropdownToggle.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevents the default anchor behavior
+                dropdownMenu.classList.toggle("show");
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove("show");
+                }
+            });
+
+            // Ensure clicking on dropdown items doesn't close the menu
+            dropdownMenu.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        });
+    // Today's Deals Data
+const deals = [
+    {
+        name: "Apple MacBook Air M2",
+        originalPrice: 1099,
+        discountedPrice: 999,
+        image: "deal1.webp",
+    },
+    {
+        name: "Vivo X90 Pro",
+        originalPrice: 1299,
+        discountedPrice: 1149,
+        image: "deal2.webp",
+    },
+    {
+        name: "Amazon Fire TV Stick 4K",
+        originalPrice: 299,
+        discountedPrice: 199,
+        image: "deal3.webp",
+    },
+    {
+        name: "boAt Airdopes 148 TWS Earbuds with Environmental Noise Cancellation (Black)",
+        originalPrice: 1999,
+        discountedPrice: 1799,
+        image: "deal4.webp",
+    },
+    {
+        name: "Apple iPhone 14 Pro Max",
+        originalPrice: 1099,
+        discountedPrice: 929,
+        image: "deal5.webp",
+    },
+    {
+        name: "Fire TV Stick 4K",
+        originalPrice: 499,
+        discountedPrice: 329,
+        image: "deal6.webp",
+    },
+    {
+        name: "HP PowerBank 10000mAh",
+        originalPrice: 1499,
+        discountedPrice: 1329,
+        image: "deal7.webp",
+    },
+    {
+        name: "Boat Headphones",
+        originalPrice: 3499,
+        discountedPrice: 3099,
+        image: "deal8.webp",
+    },
+    {
+        name: "OnePlus Nord 2T Earbuds",
+        originalPrice: 5499,
+        discountedPrice: 3429,
+        image: "deal9.webp",
+    },
+    {
+        name: "EarPods Pro 2",
+        originalPrice: 8499,
+        discountedPrice: 6429,
+        image: "deal10.webp",
+    },
+    {
+        name: "Realme GT 2 Pro",
+        originalPrice: 6499,
+        discountedPrice: 5429,
+        image: "deal11.webp",
+    },
+    {
+        name: "DC Projector",
+        originalPrice: 9499,
+        discountedPrice: 8429,
+        image: "deal12.webp",
+    },
+    {
+        name: "Flash Drive 128GB",
+        originalPrice: 8499,
+        discountedPrice: 7429,
+        image: "deal13.webp",
+    },
+    {
+        name: "PS6",
+        originalPrice: 12499,
+        discountedPrice: 11429,
+        image: "deal14.webp",
+    },
+    {
+        name: "Wireless Mouse",
+        originalPrice: 4499,
+        discountedPrice: 3429,
+        image: "deal15.webp",
+    },
+    {
+        name: "Neckband",
+        originalPrice: 2499,
+        discountedPrice: 2229,
+        image: "deal16.webp",
+    },
+    {
+        name: "Asus Vivobook 15",
+        originalPrice: 18499,
+        discountedPrice: 17429,
+        image: "deal17.webp",
+    },
+    {
+        name: "Smartwatch Series 8",
+        originalPrice: 10499,
+        discountedPrice: 9429,
+        image: "deal18.webp",
+    },
+    {
+        name: "Feature Phone",
+        originalPrice: 1999,
+        discountedPrice: 1629,
+        image: "deal19.webp",
+    },
+    {
+        name: "Samsung Galaxy Z Flip 4",
+        originalPrice: 9999,
+        discountedPrice: 9429,
+        image: "deal20.webp",
+    },
+];
+
+// Load Deals into Grid
+function loadDeals() {
+    const grid = document.getElementById("deals-grid");
+
+    deals.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("deal-card");
+
+        const discountPercent = Math.round(
+            ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100
+        );
+
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="original-price">$${product.originalPrice}</p>
+            <p class="price">$${product.discountedPrice}</p>
+            <p class="discount">${discountPercent}% OFF</p>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+let dropdownToggle = document.querySelector(".dropdown-toggle");
+let dropdownMenu = document.querySelector(".dropdown-menu");
+
+dropdownToggle.addEventListener("click", function (event) {
+event.preventDefault(); // Prevents the default anchor behavior
+dropdownMenu.classList.toggle("show");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    dropdownMenu.classList.remove("show");
+}
+});
+
+// Ensure clicking on dropdown items doesn't close the menu
+dropdownMenu.addEventListener("click", function (event) {
+event.stopPropagation();
+});
+});
+
+// Load deals when page loads
+document.addEventListener("DOMContentLoaded", loadDeals);
+
+</script>
+</body>
+</html>
