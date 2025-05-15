@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+          <div class="logo">
+            <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+          </div>
+    
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li ><a href="index.html">Home</a></li>
+              <li ><a href="allproducts.jsp">Products</a></li>
+              <li ><a href="contact.html">Contact</a></li>
+              <li ><a href="about.html">About</a></li>
+            </ul>
+    
+            
+    
+            <div class="user-section">
+              <button class="signin-btn"><a href="logout.html">Log Out </a></button>
+              <a href="viewCart.jsp"><i class="fas fa-shopping-cart cart-icon"></i>
+                
+
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <!-- Sub Category Bar -->
+<div class="sub-category-bar">
+  <ul class="category-list">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+              <li><a href="mobiles.jsp">Mobiles</a></li>
+              <li><a href="laptop.jsp">Laptops</a></li>
+              <li><a href="accessories.jsp">Accessories</a></li>
+              <li><a href="home-appliances.jsp">Home Appliances</a></li>
+          </ul>
+      </li>
+      <li><a href="fresh.jsp">Fresh</a></li>
+      
+      <li><a href="bestseller.jsp">Best Seller</a></li>
+      <li><a href="deals.jsp">Today's Deals</a></li>
+      <li><a href="new-release.jsp">New Release</a></li>
+  </ul>
+</div>
+
+    
+        <!-- Slider section -->
+        <section class="slider">
+            <div class="slides">
+              <img src="salebanner.png" alt="Laptop" class="slide active">
+              <img src="megasale.png" class="slide">
+              <img src="techbanner.png" alt="Smart TV" class="slide">
+              <img src="electrobanner (1).png" alt="Power Bank" class="slide"> 
+            </div>
+          </section>
+          <!-- Top deals -->
+      <div class="top-deals-section">
+        <h2 class="deals-heading">Top Deals 🔥</h2>
+        <div class="top-deals-container">
+          <div class="deal-card">
+            <img src="product1.jfif "alt="Smartphone Deal">
+            <h3>Apple IPhone 15</h3>
+            <p class="deal-price">₹18,999 <span>₹24,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product2.jfif" alt="Laptop Deal">
+            <h3>DELL XPS 15Laptop</h3>
+            <p class="deal-price">₹59,999 <span>₹74,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product3.jfif" alt="Headphones Deal">
+            <h3>Sony WH-1000 XM5 Headphones</h3>
+            <p class="deal-price">₹2,999 <span>₹4,499</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product4.jfif" alt="Smart Watch">
+            <h3>Samsung Galaxy  Watch6</h3>
+            <p class="deal-price">₹3,499 <span>₹5,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product5.jfif" alt="Smart Watch">
+            <h3>LG 65" 4K Smart DLED TV</h3>
+            <p class="deal-price">₹23,499 <span>₹35,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="ps5.jfif" alt="Smart Watch">
+            <h3>PS5 console</h3>
+            <p class="deal-price">₹13,499 <span>₹8,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product6.jfif" alt="Smart Watch">
+            <h3>Canon FOS R7 MirrorLess Camera</h3>
+            <p class="deal-price">₹19,499 <span>₹15,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product7.jfif" alt="Smart Watch">
+            <h3>Amazon Echo Dot</h3>
+            <p class="deal-price">₹23,499 <span>₹38,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product8.jfif" alt="Smart Watch">
+            <h3>JBL Flip 6 Bluetooth Speaker</h3>
+            <p class="deal-price">₹23,499 <span>₹38,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          <div class="deal-card">
+            <img src="product7.jfif" alt="Smart Watch">
+            <h3>MI Power Bank 20000 mah</h3>
+            <p class="deal-price">₹23,499 <span>₹38,999</span></p>
+            <button class="deal-btn"><a href="checklogin1.jsp">Shop Now</a></button>
+          </div>
+          
+        </div>
+      </div>
+     <!-- Featured products -->
+     <section class="featured-products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid">
+    
+            <div class="product-card">
+                <img src="smartwatch.webp" alt="Product 1">
+                <h3>Smart Watch</h3>
+                <p>₹1,999</p>
+                <a href="allproducts.jsp">View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="earbuds.webp" alt="Product 2">
+                <h3>Wireless Earbuds</h3>
+                <p>₹2,499</p>
+                <a href="allproducts.jsp">View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="product5.jfif" alt="Product 3">
+                <h3>Smart TV</h3>
+                <p>₹33,299</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="headphone.jfif" alt="Product 4">
+                <h3>Headphone</h3>
+                <p>₹8,799</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="laptop.avif" alt="Product 5">
+                <h3>Laptop</h3>
+                <p>₹51,599</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="product6.jfif" alt="Product 6">
+                <h3>DSLR Camera</h3>
+                <p>₹2,999</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="product9.jfif" alt="Product 7">
+                <h3>Power Bank</h3>
+                <p>₹3,999</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="product1.jfif" alt="Product 8">
+                <h3>IPhone15</h3>
+                <p>₹1,00,999</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="microwave.webp" alt="Product 9">
+                <h3>Microwave</h3>
+                <p>₹10,499</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+            
+            <div class="product-card">
+                <img src="product1.jfif" alt="Product 9">
+                <h3>Smartphone </h3>
+                <p>₹34,999</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="bluetoothspeaker.jpeg" alt="Product 10">
+                <h3>Bluetooth Speaker</h3>
+                <p>₹11,799</p>
+                <a href="allproducts.jsp">View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="ps5.jfif" alt="Product 11">
+                <h3>PS5</h3>
+                <p>₹1,199</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+    
+            <div class="product-card">
+                <img src="tablet.jfif" alt="Product 12">
+                <h3>Tablet</h3>
+                <p>₹22,999</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+            
+            <div class="product-card">
+                <img src="product4.jfif" alt="Product 12">
+                <h3>Samsung Galaxy</h3>
+                <p>₹699</p>
+                <a href="allproducts.jsp" >View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="product2.jfif" alt="Product 12">
+                <h3>DELL Laptop</h3>
+                <p>₹799</p>
+                <a href="allproducts.jsp">View Details</a>
+            </div>
+        </div>
+    </section>
+    
+      <!-- categories -->
+       <section class="categories-section">
+        <h2 class="section-categories">Shop by Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+            <img src="product1.jfif" alt="mobile phone">
+            <h3>Mobile Phones & Accessories</h3>
+            <a href="mobiles.html" class="ebtn explore-btn">Explore</a>
+            </div>
+
+        <div class="category-card">
+            <img src="product2.jfif" alt="laptop">
+            <h3>Laptops & Computers</h3>
+            <a href="laptop.html" class=" ebtn explore-btn">Explore</a>
+        </div>
+
+        <div class="category-card">
+            <img src="product5.jfif" alt="tv& audio">
+            <h3>Television & Audio</h3>
+            <a href="allproducts.jsp" class="ebtn explore-btn">Explore</a>
+        </div>
+
+        <div class="category-card">
+            <img src="product6.jfif" alt="photography">
+            <h3>Cameras & Photography</h3>
+            <a href="allproducts.jsp" class="ebtn explore-btn">Explore</a>
+        </div>
+
+        <div class="category-card">
+            <img src="ps5.jfif" alt="gaming">
+            <h3>Gaming</h3>
+            <a href="allproducts.jsp" class="ebtn explore-btn">Explore</a>
+        </div>
+
+        <div class="category-card">
+            <img src="smartwatch.webp" alt="wearable">
+            <h3>Wearable Technology</h3>
+            <a href="accessories.html" class="ebtn explore-btn">Explore</a>
+        </div>
+
+        <div class="category-card">
+          <img src="googlehomedevice.jfif" alt="Home decor">
+          <h3>Smart Home Decors</h3>
+          <a href="allproducts.jsp" class="ebtn explore-btn">Explore</a>
+      </div>
+
+      <div class="category-card">
+        <img src="tablet.jfif" alt="Accessories">
+        <h3>Tablets & Accessories</h3>
+        <a href="allproducts.jsp" class="ebtn explore-btn">Explore</a>
+    </div>
+
+    <div class="category-card">
+      <img src="computeraccessories.jfif" alt="Accesories">
+      <h3>Computer Accessories</h3>
+      <a href="accessories.html" class="ebtn explore-btn">Explore</a>
+  </div>
+        </div>
+       </section>
+       <!-- Recommendations  -->
+        <section class="signin-section">
+          <button class="signin-btn"><a href="login.html">Sign In</a></button>
+          <h3>For More Recommendations!</h3>
+          <p>New Customer?</p>
+        </section>
+        <br><br><br><br><br>
+       <!-- footer section -->
+       <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+          </div>
+      
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="allproducts.html">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Login/Register</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Phone:</strong> +91-9876543210</p>
+            <p><strong>Email:</strong> support@shopstore.com</p>
+            <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+          </div>
+      
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#">🔵 Facebook</a><br>
+            <a href="#">🟣 Instagram</a><br>
+            <a href="#">🔷 Twitter</a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+        </div>
+      </footer>
+      <script>
+//         <!-- JavaScript Starts -->
+
+
+
+
+ const cartButtons = document.querySelectorAll('.btn');
+ cartButtons.forEach(button => {
+     button.addEventListener('click', function(event) {
+         event.preventDefault(); // Prevent page redirect
+         alert('✅ Product added to cart!');
+         // Optionally, redirect to cart after a few seconds
+          setTimeout(() => { window.location.href = "cart.html"; }, 1500);
+     });
+ })
+
+
+
+
+function searchProducts() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let products = document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+        let productName = product.querySelector(".product-name").innerText.toLowerCase();
+        if (productName.includes(input)) {
+            product.style.display = "block"; // Show matching product
+        } else {
+            product.style.display = "none"; // Hide non-matching product
+        }
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let dropdownToggle = document.querySelector(".dropdown-toggle");
+    let dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents the default anchor behavior
+        dropdownMenu.classList.toggle("show");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
+
+    // Ensure clicking on dropdown items doesn't close the menu
+    dropdownMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+});
+
+</script>
+
+
+
+
+      
+</body>
+</html>
