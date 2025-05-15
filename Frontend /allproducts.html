@@ -1,0 +1,451 @@
+<!-- all-products.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="top-bar">
+      <div class="logo">
+        <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+      </div>
+
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="allproducts.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search electronics..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="user-section">
+          <button class="signin-btn"><a href="login.html">Log Out </a></button>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <span id="cart-count">0</span>
+          </a>
+          
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sub Category Bar -->
+<div class="sub-category-bar">
+  <ul class="category-list">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+              <li><a href="mobiles.html">Mobiles</a></li>
+              <li><a href="laptop.html">Laptops</a></li>
+              <li><a href="accessories.html">Accessories</a></li>
+              <li><a href="home-appliances.html">Home Appliances</a></li>
+          </ul>
+      </li>
+      <li><a href="fresh.html">Fresh</a></li>
+      <li><a href="sell.html">Sell</a></li>
+      <li><a href="best-seller.html">Best Seller</a></li>
+      <li><a href="deals.html">Today's Deals</a></li>
+      <li><a href="new-release.html">New Release</a></li>
+  </ul>
+</div>
+
+
+    <!-- All Products Section -->
+    <section class="all-products-section">
+        <h2 class="section-title">All Products</h2>
+        <div class="product-grid">     
+        <div class="product-card">
+            <img src="smartwatch.webp" alt="Smartwatch">
+            <h3>Smartwatch</h3>
+            <p>₹1,999</p>
+            <a href="product-details.html?productId=product1">View Details</a>
+            <a href="cart.html" class="add-to-cart"
+               data-name="Smartwatch"
+               data-price="1999"
+               data-image="smartwatch.webp">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="featurephone.webp" alt="Feature Phone">
+            <h3>Feature Phone</h3>
+            <p>₹1,199</p>
+            <a href="product-details.html?productId=product2">View Details</a>
+            <a href="cart.html" class="add-to-cart"
+               data-name="Feature Phone"
+               data-price="1199"
+               data-image="featurephone.webp">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="earbuds.webp" alt="Earbuds">
+            <h3>Wireless Earbuds</h3>
+            <p>₹1299</p>
+            <a href="product-details.html?productId=product3">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Wireless Earbuds"
+               data-price="1299"
+               data-image="earbuds.webp">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="smartwatch.webp" alt="Smartwatch">
+            <h3>Smartwatch</h3>
+            <p>₹9999</p>
+            <a href="product-details.html?productId=product4">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="smartwatch"
+               data-price="9999"
+               data-image="smartwatch.webp">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="headphone.jfif" alt="Headphone">
+            <h3>Bluetooth headsets</h3>
+            <p>₹2,699</p>
+            <a href="product-details.html?productId=product5">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Bluetooth headsets"
+               data-price="2699"
+               data-image="headphone.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="powerbank.webp" alt="PowerBank">
+            <h3>Power Bank</h3>
+            <p>₹2,799</p>
+            <a href="product-details.html?productId=product6">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Power Bank"
+               data-price="2799"
+               data-image="powerbank.webp">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="laptop.avif" alt="Laptop">
+            <h3>Laptop</h3>
+            <p>₹35,999</p>
+            <a href="product-details.html?productId=product7">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Laptop"
+               data-price="35999"
+               data-image="laptop.avif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="webcam.jfif" alt="Smart Shoes">
+            <h3>WebCam</h3>
+            <p>₹13,299</p>
+            <a href="product-details.html?productId=product8">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="WebCam"
+               data-price="13299"
+               data-image="webcam.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="harddrive.jfif" alt="Beauty Products">
+            <h3>Hard Drive</h3>
+            <p>₹5,499</p>
+            <a href="product-details.html?productId=product9">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Hard Drive"
+               data-price="5499"
+               data-image="harddrive.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="smarttv.avif" alt="Designer Sunglasses">
+            <h3>Smart TV</h3>
+            <p>₹24,999</p>
+            <a href="product-details.html?productId=product10">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Smart TV"
+               data-price="24999"
+               data-image="smarttv.avif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="product8.jfif" alt="Running Shoes">
+            <h3>Bluetooth speaker</h3>
+            <p>₹12,999</p>
+            <a href="product-details.html?productId=product11">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Bluetooth speaker"
+               data-price="12999"
+               data-image="product8.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="product6.jfif" alt="Leather Wallet">
+            <h3>DSLR</h3>
+            <p>₹8,999</p>
+            <a href="product-details.html?productId=product12">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="DSLR"
+               data-price="8999"
+               data-image="product6.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="microwave.webp" alt="Bluetooth Speaker">
+            <h3>Microwave</h3>
+            <p>₹11,999</p>
+            <a href="product-details.html?productId=product13">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Microwave"
+               data-price="11999"
+               data-image="microwave.webp">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="ps5.jfif" alt="Perfume">
+            <h3>PS5</h3>
+            <p>₹19,999</p>
+            <a href="product-details.html?productId=product14">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="PS5"
+               data-price="19999"
+               data-image="ps5.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="product4.jfif" alt="Water Bottle">
+            <h3>Smart Watch</h3>
+            <p>₹5,799</p>
+            <a href="product-details.html?productId=product15">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Smart Watch"
+               data-price="5799"
+               data-image="product4.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="googlehomedevice.jfif" alt="Analog Watch">
+            <h3>Google Home Devices</h3>
+            <p>₹20,599</p>
+            <a href="product-details.html?productId=product16">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Google Home Devices"
+               data-price="20599"
+               data-image="googlehomedevice.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="laptopbackpack.jfif" alt="Laptop Backpack">
+            <h3>Laptop Backpack</h3>
+            <p>₹1,000</p>
+            <a href="product-details.html?productId=product17">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Laptop Backpack"
+               data-price="1000"
+               data-image="laptopbackpack.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="tablet.jfif" alt="Men's Kurta">
+            <h3>Tablet</h3>
+            <p>₹21,599</p>
+            <a href="product-details.html?productId=product18">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="Tablet"
+               data-price="21599"
+               data-image="tablet.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="usbdrive.jfif" alt="Skincare Kit">
+            <h3>USB Drive</h3>
+            <p>₹1,599</p>
+            <a href="product-details.html?productId=product19">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="USB Drive"
+               data-price="1599"
+               data-image="usbdrive.jfif">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="hdmicable.webp" alt="Kids Combo Toy Kit">
+            <h3>HDMI Cable</h3>
+            <p>₹2,599</p>
+            <a href="product-details.html?productId=product20">View Details</a>
+            <a href="cart.html" class="add-to-cart-btn"
+               data-name="HDMI Cable"
+               data-price="2599"
+               data-image="hdmicable.webp">Add to Cart</a>
+        </div>
+
+    </div>
+    </section>
+
+    <br><br><br><br><br>
+    <!-- footer section -->
+    <footer class="footer">
+     <div class="footer-container">
+       <div class="footer-about">
+         <h3>About Us</h3>
+         <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+       </div>
+   
+       <div class="footer-links">
+         <h3>Quick Links</h3>
+         <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">Products</a></li>
+           <li><a href="#">Contact</a></li>
+           <li><a href="#">Login/Register</a></li>
+         </ul>
+       </div>
+   
+       <div class="footer-contact">
+         <h3>Contact Us</h3>
+         <p><strong>Phone:</strong> +91-9876543210</p>
+         <p><strong>Email:</strong> support@shopstore.com</p>
+         <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+       </div>
+   
+       <div class="footer-social">
+         <h3>Follow Us</h3>
+         <a href="#">🔵 Facebook</a><br>
+         <a href="#">🟣 Instagram</a><br>
+         <a href="#">🔷 Twitter</a>
+       </div>
+     </div>
+   
+     <div class="footer-bottom">
+       <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+     </div>
+   </footer>
+   <script src="product-details.js"></script>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let dropdownToggle = document.querySelector(".dropdown-toggle");
+    let dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents the default anchor behavior
+        dropdownMenu.classList.toggle("show");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
+
+    // Ensure clicking on dropdown items doesn't close the menu
+    dropdownMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+});
+     // DOM Ready
+     window.addEventListener("DOMContentLoaded", () => {
+       const container = document.getElementById("products-container");
+ 
+       products.forEach(product => {
+         const card = document.createElement("div");
+         card.innerHTML = `
+           <img src="${product.image}" width="150"><br>
+           <h3>${product.name}</h3>
+           <p>${product.description}</p>
+           <p>₹${product.price}</p>
+           <button onclick="addToCart(${product.id})">Add to Cart</button>
+           <button onclick="viewDetails(${product.id})">View Details</button>
+         `;
+         container.appendChild(card);
+       });
+ 
+       // Define globally so it works with inline onclick
+       window.addToCart = function(productId) {
+         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+         const product = products.find(p => p.id === productId);
+         if (!existingCart.some(p => p.id === productId)) {
+           existingCart.push(product);
+           localStorage.setItem("cart", JSON.stringify(existingCart));
+           alert(`${product.name} added to cart`);
+         } else {
+           alert("Already in cart");
+         }
+       };
+ 
+       window.viewDetails = function(productId) {
+         localStorage.setItem("selectedProduct", productId);
+         window.location.href = "product-details.html";
+       };
+     });
+     document.addEventListener("DOMContentLoaded", function () {
+    // Function to add item to cart
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(product.name + " added to cart!");
+    }
+
+    // Select all "Add to Cart" buttons
+    let cartButtons = document.querySelectorAll(".add-to-cart, .add-to-cart-btn");
+
+    cartButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default action
+
+            let product = {
+                name: this.getAttribute("data-name"),
+                price: this.getAttribute("data-price"),
+                image: this.getAttribute("data-image"),
+                quantity: 1
+            };
+
+            addToCart(product);
+        });
+    });
+});
+
+// Initialize cart from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const cartCount = document.getElementById("cart-count");
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  cartCount.textContent = cartItems.length;
+
+  // Listen for all Add to Cart buttons
+  document.querySelectorAll(".add-to-cart, .add-to-cart-btn").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default link behavior
+
+      const product = {
+        name: this.getAttribute("data-name"),
+        price: this.getAttribute("data-price"),
+        image: this.getAttribute("data-image")
+      };
+
+      // Add product to localStorage cart
+      cartItems.push(product);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+
+      // Update cart count
+      cartCount.textContent = cartItems.length;
+    });
+  });
+});
+
+
+   </script>
+  
+
+</body>
+</html>
