@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="top-bar">
+      <div class="logo">
+        <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+      </div>
+
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="allproducts.jsp">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search electronics..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="user-section">
+          <button class="signin-btn"><a href="login.html">Sign In </a></button>
+          <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i>
+            <span id="cart-count" aria-live="polite">0</span>
+
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+    <div class="product-container">
+        <div class="product-image">
+            <img id="product-image" src="" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h1 id="product-name"></h1>
+            <p id="product-description"></p>
+            <p><strong>Brand:</strong> <span id="product-brand"></span></p>
+            <p><strong>Category:</strong> <span id="product-category"></span></p>
+            <p><strong>Color:</strong> <span id="product-color"></span></p>
+            <p><strong>SKU:</strong> <span id="product-sku"></span></p>
+            <p><strong>Price:</strong> $<span id="product-price"></span></p>
+
+            <button id="add-to-cart-btn" class="btn">Add to Cart</button>
+
+        </div>
+    </div>
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    <!-- footer section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Us</h3>
+          <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+        </div>
+    
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login/Register</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><strong>Phone:</strong> +91-9876543210</p>
+          <p><strong>Email:</strong> support@shopstore.com</p>
+          <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+        </div>
+    
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="#">🔵 Facebook</a><br>
+          <a href="#">🟣 Instagram</a><br>
+          <a href="#">🔷 Twitter</a>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+  .btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+.product-container {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+.product-image img {
+    max-width: 300px;
+    border-radius: 5px;
+}
+.product-details {
+    margin-left: 20px;
+}
+</style>
+<script>
+  // Initialize cart from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const cartCount = document.getElementById("cart-count");
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  cartCount.textContent = cartItems.length;
+
+  // Listen for all Add to Cart buttons
+  document.querySelectorAll(".add-to-cart, .add-to-cart-btn").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default link behavior
+
+      const product = {
+        name: this.getAttribute("data-name"),
+        price: this.getAttribute("data-price"),
+        image: this.getAttribute("data-image")
+      };
+
+      // Add product to localStorage cart
+      cartItems.push(product);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+
+      // Update cart count
+      cartCount.textContent = cartItems.length;
+    });
+  });
+});
+const products = {
+    "product1": {
+        name: "Smart Watch",
+        description: "Feature-rich smartwatch with health tracking.",
+        brand: "TechGear",
+        category: "Electronics",
+        color: "white",
+        sku: "AT12345",
+        price: 1999.00,
+        image: "smartwatch.webp"
+    },
+    "product2": {
+        name: "Feature Phone",
+        description: "Feature-rich phone with long battery life.",
+        brand: "Nokia",
+        category: "smartphones",
+        color: "Red",
+        sku: "TG98765",
+        price: 1199.00,
+        image: "featurephone.webp"
+    },
+    "product3": {
+        name: "Wireless Earbuds",
+        description: "High-quality sound with noise cancellation.",
+        brand: "BoAt",
+        category: "Accessories",
+        color: "White",
+        sku: "AT12345",
+        price: 1299.00,
+        image: "earbuds.webp"
+    },
+    "product4": {
+        name: "Smartwatch",
+        description: "High-quality sound with noise cancellation.",
+        brand: "BoAt",
+        category: "Wearables",
+        color: "White",
+        sku: "AT12334",
+        price: 9999.00,
+        image: "smartwatch.webp"
+    },
+    "product5": {
+        name: "Bluetooth Headsets",
+        description: "High-quality sound with noise cancellation.",
+        brand: "BoAt",
+        category: "Wearables",
+        color: "Black",
+        sku: "TA12334",
+        price: 2699.00,
+        image: "headphone.jfif"
+    },
+    "product6": {
+        name: "Power Bank",
+        description: "Fast Charging Capacity ",
+        brand: "BoAt",
+        category: "Accessories",
+        color: "White",
+        sku: "TQ15334",
+        price: 2799.00,
+        image: "powerbank.webp"
+    },
+    "product7": {
+        name: "Laptop",
+        description: "The HP 15-FC0156AU is a sleek and powerful laptop designed for productivity, entertainment, and multitasking.Resolution : 1920 x 1080",
+        brand: "HP",
+        category: "Laptop",
+        color: "Silver",
+        sku: "TJ15634",
+        price: 35999.00,
+        image: "laptop.avif"
+    },
+    "product8": {
+        name: "WebCam",
+        description: "The ZEB-Crystal Clear is a web camera featuring a 3P lens with a resolution of 640x480",
+        brand: "Zebronics",
+        category: "WebCam",
+        color: "Black",
+        sku: "TQ34634",
+        price: 13299.00,
+        image: "webcam.jfif"
+    },
+    "product9": {
+        name: "Hard Drive",
+        description: "The Western Digital Caviar Blue 1TB hard disk offers performance, reliability, large storage capacity and the new 6 Gb/s Serial ATA interface.",
+        brand: "Caviar",
+        category: "Accessories",
+        color: "White",
+        sku: "AF24734",
+        price: 5499.00,
+        image: "harddrive.jfif"
+    },
+    "product10":{
+      name:"Smart Tv",
+      description:"Xiaomi A Series 32 inch HD Ready LED Smart TV",
+      brand:"LG",
+      category:"Television",
+      color:"Black",
+      sku:"AS3D1F0",
+      price:24999,
+      image:"smarttv.avif"
+    },
+    "product11":{
+      name:"Bluetooth Speaker",
+      description:"Portable BT v5.0 speaker ZEB-BUDDY 100, filled with exciting features",
+      brand:"BoAt",
+      category:"Wearables",
+      color:"Black",
+      sku:"AQ5O1G0",
+      price:12999,
+      image:"product8.jfif"
+    },
+    "product12":{
+      name:"DSLR",
+      description:"Canon EOS 3000D 18MP Digital SLR Camera",
+      brand:"Canon",
+      category:"Camera",
+      color:"Black",
+      sku:"WQ4O5G0",
+      price:8999,
+      image:"product6.jfif"
+    },
+    "product13":{
+      name:"Microwave",
+      description:"Canon EOS 3000D 18MP Digital SLR Camera",
+      brand:"LG",
+      category:"Kitchen Appliances",
+      color:"Black",
+      sku:"WA3O7H0",
+      price:11999,
+      image:"microwave.webp"
+    },
+    "product14":{
+      name:"PS5",
+      description:"Sony PS5 PlayStation 5 Digital Edition Console Slim",
+      brand:"Sony",
+      category:"Gaming",
+      color:"Black",
+      sku:"3O7H045",
+      price:19999,
+      image:"ps5.jfif"
+    },
+    "product15":{
+      name:"SmartWatch",
+      description:"Samsung Galaxy Watch 5 Pro 45mm Smartwatch",
+      brand:"Samsung",
+      category:"Wearables",
+      color:"Black",
+      sku:"3W7J045",
+      price:5799,
+      image:"product4.jfif"
+    },
+    "product16":{
+      name:"Google Home Device",
+      description:"Google Home Device with Google Assistant",
+      brand:"Google",
+      category:"Smart Home",
+      color:"white",
+      sku:"WR5678",
+      price:20599,
+      image:"googlehomedevice.jfif"
+    },
+    "product17":{
+      name:"Laptop BackPack",
+      description:"Laptop Backpack",
+      brand:"Lenovo",
+      category:"Accessories",
+      color:"Black",
+      sku:"GT6745",
+      price:1000,
+      image:"laptopbackpack.jfif"
+    },
+    "product18":{
+      name:"Tablet",
+      description:"Fully Functional Tablet",
+      brand:"Samsung",
+      category:"Tablet",
+      color:"white",
+      sku:"45HG23",
+      price:21599,
+      image:"tablet.jfif"
+    },
+    "product19":{
+      name:"USB Drive",
+      description:"USB 3.0 Flash Drive",
+      brand:"SanDisk",
+      category:"Accessories",
+      color:"Black+red",
+      sku:"DFG678",
+      price:1599,
+      image:"usbdrive.jfif"
+    },
+    "product20":{
+      name:"HDMI Cable",
+      description:"High-Speed HDMI Cable",
+      brand:"AmazonBasics",
+      category:"Accessories",
+      color:"Black",
+      sku:"D5E678",
+      price:2599,
+      image:"hdmicable.webp"
+    }
+
+};
+
+function loadProduct(productId) {
+    const product = products[productId];
+    if (product) {
+        document.getElementById("product-image").src = product.image;
+        document.getElementById("product-name").innerText = product.name;
+        document.getElementById("product-description").innerText = product.description;
+        document.getElementById("product-brand").innerText = product.brand;
+        document.getElementById("product-category").innerText = product.category;
+        document.getElementById("product-color").innerText = product.color;
+        document.getElementById("product-sku").innerText = product.sku;
+        document.getElementById("product-price").innerText = product.price;
+    } else {
+        document.querySelector(".product-container").innerHTML = "<h2>Product Not Found</h2>";
+    }
+}
+
+function getProductIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("productId");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const productId = getProductIdFromURL() || "product1"; // fallback
+    loadProduct(productId);
+});
+
+</script>
+</body>
+</html>
