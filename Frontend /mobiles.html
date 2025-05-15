@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+    <style>
+header{
+    color:white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bolder;
+    background-color:orange;
+    padding: 15px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 15px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+.product-card img {
+  width: 200px;
+  height: 200px;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Product Name */
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Price */
+.price {
+  font-size: 16px;
+  color: #27ae60;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+/* General Button Styling */
+button {
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  width: 48%;
+  color: white;
+}
+
+/* Add to Cart Button */
+button.add-to-cart {
+  background: #28a745;
+}
+
+button.add-to-cart:hover {
+  background:  #28a745;
+}
+
+/* View Details Button */
+button.view-details {
+  background: #3498db;
+}
+
+button.view-details:hover {
+  background: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+          <div class="logo">
+            <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+          </div>
+    
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="allproducts.jsp">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+    
+            
+    
+            <div class="user-section">
+              <button class="signin-btn"><a href="logout.html">Log Out </a></button>
+              <a href="viewCart.jsp"><i class="fas fa-shopping-cart cart-icon"></i></a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <!-- Sub Category Bar -->
+<div class="sub-category-bar">
+  <ul class="category-list">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+              <li><a href="mobiles.html">Mobiles</a></li>
+              <li><a href="laptop.html">Laptops</a></li>
+              <li><a href="accessories.html">Accessories</a></li>
+              <li><a href="home-appliances.html">Home Appliances</a></li>
+          </ul>
+      </li>
+      <li><a href="fresh.html">Fresh</a></li>
+      
+      <li><a href="bestseller.jsp">Best Seller</a></li>
+      <li><a href="deals.html">Today's Deals</a></li>
+      <li><a href="new-release.html">New Release</a></li>
+  </ul>
+</div>
+<header>
+    Mobiles 
+</header>
+<br> <br> <br> 
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="mobile1.jfif" alt="Samsung Galaxy S23">
+            <h2 class="product-name">Samsung Galaxy S23</h2>
+            <p class="price">₹11,499</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile2.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">iPhone 16 Pro</h2>
+            <p class="price">₹1,37,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile3.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Vivo Y300i</h2>
+            <p class="price">₹32,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile4.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Realme 14 5G</h2>
+            <p class="price">₹23,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile5.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Poco F7 Ultra</h2>
+            <p class="price">₹25,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile6.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Poco F7 Pro</h2>
+            <p class="price">₹20,499</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile7.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy M05</h2>
+            <p class="price">₹32,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile7.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Vivo Y39 5G</h2>
+            <p class="price">₹24,399</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile8.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy M06 5G</h2>
+            <p class="price">₹41,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile9.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy M16 5G</h2>
+            <p class="price">₹32,199</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile10.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Realme P3 Pro</h2>
+            <p class="price">₹79,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile11.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">vivo T3 Pro</h2>
+            <p class="price">₹22,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile12.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">vivo V50</h2>
+            <p class="price">₹89,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile13.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy M16 5G</h2>
+            <p class="price">₹11,499</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile14.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy A35 5G</h2>
+            <p class="price">₹24,349</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile15.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">OPPO F29 Pro</h2>
+            <p class="price">₹27,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile16.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">OPPO F27 Pro Plus</h2>
+            <p class="price">₹25,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile17.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">OPPO Reno12 Pro</h2>
+            <p class="price">₹39,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile18.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Lava Blaze Curve 5G</h2>
+            <p class="price">₹14,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile19.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Lenovo K6 Note</h2>
+            <p class="price">₹8,498</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile20.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Lava Yuva 4</h2>
+            <p class="price">₹6,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile21.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Lenovo Vibe Z2 Pro(K920)</h2>
+            <p class="price">₹29,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile22.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">OnePlus Nord CE 4 5G</h2>
+            <p class="price">₹22,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile23.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Lenovo P2 3GB RAM</h2>
+            <p class="price">₹16,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile24.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">OnePlus Nord CE 2 Lite 5G</h2>
+            <p class="price">₹30,499</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile25.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Lenovo Z2 Plus 64GB(Zuk Z2)</h2>
+            <p class="price">₹19,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile26.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Xiaomi Redmi Note 14 5G</h2>
+            <p class="price">₹17,799</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile27.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy S24 FE</h2>
+            <p class="price">₹39,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile28.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Xiaomi Redmi Note 13 Pro Plus 5G</h2>
+            <p class="price">₹74,499</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile29.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Samsung Galaxy S23 Ultra 5G</h2>
+            <p class="price">₹79,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="mobile30.jfif" alt="iPhone 14 Pro">
+            <h2 class="product-name">Vivo X200 Pro</h2>
+            <p class="price">₹24,999</p>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+          </div>
+      
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Login/Register</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Phone:</strong> +91-9876543210</p>
+            <p><strong>Email:</strong> support@shopstore.com</p>
+            <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+          </div>
+      
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#">🔵 Facebook</a><br>
+            <a href="#">🟣 Instagram</a><br>
+            <a href="#">🔷 Twitter</a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+        </div>
+      </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let dropdownToggle = document.querySelector(".dropdown-toggle");
+    let dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents the default anchor behavior
+        dropdownMenu.classList.toggle("show");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
+
+    // Ensure clicking on dropdown items doesn't close the menu
+    dropdownMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+});
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const cart = [];
+    
+    // Select all "Add to Cart" buttons
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", function () {
+            let productName = this.closest(".product-card").querySelector(".product-name").innerText;
+            let productPrice = this.closest(".product-card").querySelector(".price").innerText;
+            
+            cart.push({ name: productName, price: productPrice });
+            alert(productName + " added to cart! 🛒");
+        });
+    });
+
+    // Select all "View Details" buttons
+    document.querySelectorAll(".view-details").forEach(button => {
+        button.addEventListener("click", function () {
+            let productName = this.closest(".product-card").querySelector(".product-name").innerText;
+            
+            // Redirecting to a details page (Modify URL as per requirement)
+            window.location.href = `allproducts.html?product=${encodeURIComponent(productName)}`;
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
