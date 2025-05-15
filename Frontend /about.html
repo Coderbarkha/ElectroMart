@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Electro Mart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* ======== About Section ======== */
+    .about-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .about-header h1 {
+      font-size: 2.5rem;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .about-header p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .highlight-box {
+      background-color: #f9c828;
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      color: #222;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card h3 {
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .team-card p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .extra-info {
+      display: none;
+      margin-top: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .toggle-btn {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background-color: #333;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: white;
+      margin-top: 60px;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .team-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+          <div class="logo">
+            <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+          </div>
+    
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="allproducts.jsp">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+    
+         
+    
+            <div class="user-section">
+              <button class="signin-btn"><a href="logout.html">Log Out </a></button>
+              <a href="viewCart.jsp"><i class="fas fa-shopping-cart cart-icon"></i></a>
+            </div>
+          </nav>
+        </div>
+      </header>
+  
+
+  <!-- About Section -->
+  <div class="about-container">
+    <div class="about-header">
+      <h1>About Electro Mart</h1>
+      <p>Innovation. Passion. Shopping Simplified.</p>
+    </div>
+
+    <div class="highlight-box">
+      At Electro Mart, we bring the latest tech and gadgets to your doorstep with trust and affordability. Whether it's your daily tech needs or smart lifestyle choices — we’ve got you covered!
+    </div>
+
+    <h2 style="margin-top:40px;">Meet Our Team</h2>
+    <div class="team-section">
+      <div class="team-card">
+        <h3>Barkha</h3>
+        <p>Frontend Developer</p>
+        <p>Passionate about crafting beautiful user experiences, designing smooth and responsive interfaces for a better shopping journey.</p>
+      </div>
+      <div class="team-card">
+        <h3>Manisha</h3>
+        <p>Backend Developer</p>
+        <p>Ensuring everything works seamlessly behind the scenes, from database to secure transactions and APIs.</p>
+      </div>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleMore()">Our Vision & Journey</button>
+
+    <div class="extra-info" id="extraInfo">
+      <h2>Our Vision</h2>
+      <p>At Electro Mart, our vision is to revolutionize the way people shop for electronics by blending innovation, affordability, and simplicity into every customer experience.
+        We aim to become a one-stop destination for smart gadgets and tech accessories that empower lives, enhance productivity, and inspire a digital lifestyle.
+        Our commitment is to make technology accessible to everyone — from everyday users to tech enthusiasts — through a seamless, secure, and satisfying online journey.
+        
+        We believe in shaping the future of e-commerce where:
+        
+        Shopping feels intuitive and user-friendly
+        
+        Products are curated for quality and reliability
+        
+        Customer satisfaction is the core of every decision we make
+        
+        We don’t just sell electronics — we deliver experiences that spark joy and trust.</p>
+      <h2>Our Journey</h2>
+      <p>The journey of Electro Mart began with two passionate developers — Barkha and Manisha — who saw a gap in the market for a user-friendly and reliable electronics store.
+        Frustrated by the complexity and lack of personalization in traditional e-commerce platforms, we decided to build something different — a tech platform that values user experience as much as it values technology.
+        
+        Our story started as a college project, and today, it’s growing into a full-fledged e-commerce solution powered by modern design, clean architecture, and strong backend support.
+        Through continuous learning, late-night coding sessions, countless iterations, and an unwavering desire to deliver excellence — Electro Mart is turning dreams into reality.
+        
+        What makes our journey special?
+        
+        Built from the ground up by a dedicated duo
+        
+        Focused on real user problems and solving them through design + development
+        
+        Fueled by passion, teamwork, and constant innovation
+        
+        We are still growing, evolving, and learning — but our mission remains the same: Empowering users with the best tech at their fingertips.</p>
+    </div>
+  </div>
+
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About Us</h3>
+        <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best prices.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Login/Register</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><strong>Phone:</strong> +91-9876543210</p>
+        <p><strong>Email:</strong> support@shopstore.com</p>
+        <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#">🔵 Facebook</a><br>
+        <a href="#">🟣 Instagram</a><br>
+        <a href="#">🔷 Twitter</a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMore() {
+      const info = document.getElementById("extraInfo");
+      info.style.display = (info.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
