@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliances</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6600;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* Subcategory Bar */
+        .subcategory-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .subcategory-btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .subcategory-btn:hover {
+            background-color: #cc5200;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Product Image */
+        .product-card img {
+            width: 200px;
+            height: 200px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Product Name */
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Price */
+        .price {
+            font-size: 16px;
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        /* Add to Cart Button */
+        button.add-to-cart {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button.add-to-cart:hover {
+            background: #218838;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .subcategory-bar {
+                flex-wrap: wrap;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <h1><span class="e">Electro</span><span class="m">Mart</span></h1>
+            </div>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="allproducts.jsp">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+             
+
+                <div class="user-section">
+                    <button class="signin-btn"><a href="login.html">Log Out </a></button>
+                    <a href="cart.html"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Sub Category Bar -->
+    <div class="sub-category-bar">
+        <ul class="category-list">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">All <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mobiles.jsp">Mobiles</a></li>
+                    <li><a href="laptop.jsp">Laptops</a></li>
+                    <li><a href="accessories.jsp">Accessories</a></li>
+                    <li><a href="home-appliances.html">Home Appliances</a></li>
+                </ul>
+            </li>
+            <li><a href="fresh.html">Fresh</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="best-seller.jsp">Best Seller</a></li>
+            <li><a href="deals.html">Today's Deals</a></li>
+            <li><a href="new-release.html">New Release</a></li>
+        </ul>
+    </div>
+
+    <!-- Subcategory Navigation -->
+    <nav class="subcategory-bar">
+        <button class="subcategory-btn" onclick="filterCategory('all')">All</button>
+        <button class="subcategory-btn" onclick="filterCategory('washing-machine')">Washing Machines</button>
+        <button class="subcategory-btn" onclick="filterCategory('refrigerator')">Refrigerators</button>
+        <button class="subcategory-btn" onclick="filterCategory('microwave')">Microwaves</button>
+        <button class="subcategory-btn" onclick="filterCategory('air-fryer')">Air Fryer</button>
+    </nav>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <div class="product-card refrigerator">
+            <img src="appliance1.webp" alt="refrigerator">
+            <h2 class="product-name">Whirlpool IF INV ELT 278GD 231 L Frost Free Double Door 2 Star Refrigerator</h2>
+            <p class="price">₹25,339</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card air-fryer">
+            <img src="appliance2.webp" alt="air-fryer">
+            <h2 class="product-name">Philips 4.2 Litre Air Fryer NA120/00</h2>
+            <p class="price">₹4585</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card air-fryer">
+            <img src="appliance3.webp" alt="air-fryer">
+            <h2 class="product-name">Pigeon Healthifry Digital Air Fryer</h2>
+            <p class="price">₹2,799</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card microwave">
+            <img src="appliance4.webp" alt="microwave">
+            <h2 class="product-name">LG 20 L Solo Microwave Oven</h2>
+            <p class="price">₹6,890</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card induction">
+            <img src="appliance5.webp" alt="induction">
+            <h2 class="product-name">Prestige Atlas Neo Induction Cooktop</h2>
+            <p class="price">₹1,349</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card microwave">
+            <img src="appliance6.webp" alt="microwave">
+            <h2 class="product-name">Samsung 23 L Grill Microwave Oven</h2>
+            <p class="price">₹8,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card mixer">
+            <img src="appliance7.webp" alt="mixer">
+            <h2 class="product-name">Morphy Richards Grindpro Maxx Mixer Grinder</h2>
+            <p class="price">₹6,199</p>
+            <a href="allproducts.html">View Details</a>
+        </div>
+
+        <div class="product-card kettle">
+            <img src="appliance8.webp" alt="kettle">
+            <h2 class="product-name">V-Guard VKM12 1.2- Litre Multi-Purpose Cooker/Kettle</h2>
+            <p class="price">₹1,099</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card gas-stove">
+            <img src="appliance9.webp" alt="gas-stove">
+            <h2 class="product-name">Pigeon Favourite 2-Burner Glass</h2>
+            <p class="price">₹1,399</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card refrigerator">
+            <img src="appliance10.webp" alt="refrigerator">
+            <h2 class="product-name">ROCKWELL 91Ltr Mini Refrigerator with Direct Cool Technology - Single Door Design,</h2>
+            <p class="price">₹9,700</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card induction">
+            <img src="appliance11.webp" alt="induction">
+            <h2 class="product-name">Lifelong 1800 Watt Induction Cooktop</h2>
+            <p class="price">₹1,120.71</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card refrigerator">
+            <img src="appliance12.webp" alt="refrigerator">
+            <h2 class="product-name">Bosch Series 4 Free-standing Refrigerator CST18S24NI</h2>
+            <p class="price">₹17,900</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card kettle">
+            <img src="appliance13.webp" alt="kettle">
+            <h2 class="product-name">AGARO Regency Multi Cook Kettle</h2>
+            <p class="price">₹1,799</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card air-fryer">
+            <img src="appliance14.webp" alt="air-fryer">
+            <h2 class="product-name">Myntra Lifelong Air Fryer</h2>
+            <p class="price">₹2,159</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card mixer">
+            <img src="appliance15.webp" alt="mixer">
+            <h2 class="product-name">Philips Mixer Grinder HL7777/00</h2>
+            <p class="price">₹13,999</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card juicer">
+            <img src="appliance16.webp" alt="juicer">
+            <h2 class="product-name">Nutripro Juicer Mixer Grinder Smoothie Maker</h2>
+            <p class="price">₹1,599</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card washing-machine">
+            <img src="appliance17.webp" alt="washing-machine">
+            <h2 class="product-name">LG 7kg Front Load Washing Machine FHM1207SDM</h2>
+            <p class="price">₹28,990</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card mixer">
+            <img src="appliance18.webp" alt="mixer">
+            <h2 class="product-name">Morphy Richards Grindpro Maxx Mixer Grinder</h2>
+            <p class="price">₹6,199</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card gas-stove">
+            <img src="appliance19.webp" alt="gas-stove">
+            <h2 class="product-name">Crompton SuperSlim 4 Burner Automatic Hob
+            </h2>
+            <p class="price">₹15,915</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+
+        <div class="product-card washing-machine">
+            <img src="appliance20.webp" alt="washing-machine">
+            <h2 class="product-name">Samsung 12 KG Fully Automatic Front Load Washing Machine</h2>
+            <p class="price">₹58,000</p>
+            <a href="allproducts.jsp">View Details</a>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Your one-stop online store for all your shopping needs. We deliver quality products at the best
+                    prices.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="allproducts.jsp">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login/Register</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> support@shopstore.com</p>
+                <p><strong>Address:</strong> 123 Shopping Street, Your City</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#">🔵 Facebook</a><br>
+                <a href="#">🟣 Instagram</a><br>
+                <a href="#">🔷 Twitter</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopStore. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let dropdownToggle = document.querySelector(".dropdown-toggle");
+            let dropdownMenu = document.querySelector(".dropdown-menu");
+
+            dropdownToggle.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevents the default anchor behavior
+                dropdownMenu.classList.toggle("show");
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove("show");
+                }
+            });
+
+            // Ensure clicking on dropdown items doesn't close the menu
+            dropdownMenu.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all "Add to Cart" buttons
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", function () {
+                    let productName = this.closest(".product-card").querySelector(".product-name").innerText;
+                    alert(productName + " added to cart! 🛒");
+                });
+            });
+        });
+
+        // Function to filter categories
+        function filterCategory(category) {
+            let products = document.querySelectorAll(".product-card");
+
+            products.forEach(product => {
+                if (category === "all") {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = product.classList.contains(category) ? "block" : "none";
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
